@@ -15,3 +15,4 @@ DELETE FROM products WHERE discontinued = 1; -- Удаление строк в �
 DELETE FROM order_details WHERE product_id NOT IN (SELECT product_id FROM products); -- Удаление строк product_id.order_details которых нет в product_id.products
 DELETE FROM orders WHERE order_id NOT IN (SELECT order_id FROM order_details); -- Удаление строк order_id.orders которых нет в product_id.order_details
 ALTER TABLE order_details ADD CONSTRAINT fk_order_details_products FOREIGN KEY(product_id) REFERENCES products(product_id) -- Возвращение зависимости order_details и products
+
